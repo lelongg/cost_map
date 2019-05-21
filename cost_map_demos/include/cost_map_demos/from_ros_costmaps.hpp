@@ -16,6 +16,7 @@
 #include <costmap_2d/costmap_2d_ros.h>
 #include <memory>
 #include <string>
+#include <tf2_ros/transform_listener.h>
 
 #include "utilities.hpp"
 
@@ -54,7 +55,8 @@ public:
 
 private:
   ROSCostmapPtr costmap;
-  tf::TransformListener transform_listener;
+  tf2_ros::Buffer tf_buffer;
+  tf2_ros::TransformListener transform_listener;
 };
 
 
